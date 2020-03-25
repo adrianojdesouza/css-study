@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="sticky">
+      <nav>
+        <a href="#">Options</a>
+        <a href="#">Usage</a>
+        <a href="#">Values</a>
+      </nav>
+    </div>
+    <div class="content"></div>
+  </div>
+
+  <script>
+    // Selecionando o menu para calcular qual distância ele está do top
+    const menuContainer = document.querySelector('.sticky');
+    const menu = menuContainer.querySelector('nav');
+
+    window.addEventListener('scroll', function(event) {
+      console.table(menuContainer.offsetTop, window.scrollY)
+
+      if (menuContainer.offsetTop <= window.scrollY) {
+        menu.classList.add('fixed-menu')
+      } else {
+        menu.classList.remove('fixed-menu') 
+      }
+    })
+  </script>
+</body>
+</html>
